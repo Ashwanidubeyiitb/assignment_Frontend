@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Commercial Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -76,23 +80,51 @@
 
 <body class="font-sans">
     <div class="flex flex-col md:flex-row">
-
+        <!-- Left Div with Image Carousel -->
         <div class="w-full md:w-1/2 p-4 relative">
-            <img id="productImage" src="your-image.jpg" alt="Product Image" class="w-full h-auto">
-            <div id="carouselDots" class="flex justify-center mt-4 md:hidden"></div>
+            <img id="productImage" src="your-image.jpg" alt="Product Image"
+                class="w-full h-full object-cover">
+            <div class="w-full md:w-1/2 p-4 fixed bottom-0 left-0">
+                <div id="imageCarousel" class="flex flex-col justify-center">
+                    <div class="mb-2 cursor-pointer" onclick="changeImage(0)">
+                        <div class="w-16 h-16 rounded-full overflow-hidden">
+                            <img src="your-image.jpg" alt="Image 1" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="mb-2 cursor-pointer" onclick="changeImage(1)">
+                        <div class="w-16 h-16 rounded-full overflow-hidden">
+                            <img src="your-image1.jpg" alt="Image 2" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="mb-2 cursor-pointer" onclick="changeImage(2)">
+                        <div class="w-16 h-16 rounded-full overflow-hidden">
+                            <img src="your-image2.jpg" alt="Image 3" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="mb-2 cursor-pointer" onclick="changeImage(3)">
+                        <div class="w-16 h-16 rounded-full overflow-hidden">
+                            <img src="your-image3.jpg" alt="Image 4" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="cursor-pointer" onclick="changeImage(4)">
+                        <div class="w-16 h-16 rounded-full overflow-hidden">
+                            <img src="your-image4.jpg" alt="Image 5" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
         <div
             class="w-full md:w-1/2 p-4 md:p-4 font-family: var(--font-heading) flex justify-center items-center flex-col">
             <div class="mb-6 text-center">
-                <p class="mb-0 mt-3 text-3xl text-green-900 px-(-11)">“Drizzle” & “Sizzle”</p>
-                <p class="text-3xl text-green-900"><u>Extra Virgin Olive Oil</u></p>
+                <p class="mb-0 mt-3 text-3xl text-green-900 -ml-11 font-Cormorant-Garamond">“Drizzle” &
+                    “Sizzle”</p>
+                <p class="text-3xl text-green-900 font-Cormorant-Garamond"><u>Extra Virgin Olive Oil</u></p>
+
                 <div class="flex justify-center my-4">
-                    <!-- Add 5 stars (☆☆☆☆☆) -->
-                    <div class="text-2xl">
-                        &#9733;&#9733;&#9733;&#9733;&#9733;
-                    </div>
+                    <div class="text-2xl">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <p class="text-lg text-gray-600 ml-2">881 reviews</p>
                 </div>
             </div>
