@@ -12,13 +12,23 @@
         }
         .outer-card {
             border: 1px solid #000;
+            border-radius: 10px;
             padding: 16px;
+            height: 60%;
+            width: 75%;
         }
         .inner-card {
             border: 1px solid #000;
             padding: 12px;
             text-align: center;
+            border-radius: 10px;
+            width: 23%;
+            height: 75px;
+        }.inner-card:hover{
+            background-color: rgb(49, 137, 80) !important;
+            color:white;
         }
+
         .selected {
             background-color: green;
             color: white;
@@ -56,7 +66,7 @@
         </div>
 
         <!-- Right Div with Product Info and Options -->
-        <div class="w-full md:w-1/2 p-4 md:p-4 font-family: var(--font-heading)">
+        <div class="w-full md:w-1/2 p-4 md:p-4 font-family: var(--font-heading) flex justify-center items-center flex-col">
             <div class="mb-6 text-center">
                 <p class="mb-0 mt-3 text-3xl text-green-900 px-(-11)">“Drizzle” & “Sizzle”</p>
                 <p class="text-3xl text-green-900"><u>Extra Virgin Olive Oil</u></p>
@@ -68,57 +78,42 @@
                     <p class="text-lg text-gray-600 ml-2">881 reviews</p>
                 </div>
                 </div>
-                <div class="my-4 outer-card">
-                    <p class="text-2xl">Quantity</p>
-                    <div class="flex my-2" id="quantityOptions">
-                        <div class="options-flex">
-                            <label class="inner-card radio-label">
-                                <input type="radio" name="quantity" value="1" onclick="showOptions(1)"> 1 Set +10% Off
-                            </label>
-                            <label class="inner-card radio-label">
-                                <input type="radio" name="quantity" value="2" onclick="showOptions(2)"> 2 Sets Free Shipping! +7% Off
-                            </label>
-                            <label class="inner-card radio-label">
-                                <input type="radio" name="quantity" value="3" onclick="showOptions(3)"> 3 Sets Free Shipping! +7% Off
-                            </label>
-                            <label class="inner-card radio-label">
-                                <input type="radio" name="quantity" value="4" onclick="showOptions(4)"> 4 Sets Free Shipping! +7% Off
-                            </label>
+
+                <div class="my-4 outer-card flex flex-col">
+                    <p>Quantity</p>
+                    <div class="flex flex-row justify-between m-4">
+                        <div  class="inner-card">
+                            <p>fixed</p>
+                            <p>first</p>
                         </div>
-                        <div id="options1" class="hidden">
-                            ptions1" class="hidden">
-                            <input type="checkbox" class="checkbox" id="option1-1">
-                            <label for="option1-1">One Time Purchase</label>
-                            <br>
-                            $37
-                            <br>
-                            <input type="checkbox" class="checkbox" id="option1-2">
-                            <label for="option1-2">Subscribe & Save</label>
-                            <br>
-                            $37
-                            <br>
-                            $33.30
-                            <br>
-                            <input type="checkbox" class="checkbox" id="option1-3">
-                            <label for="option1-3">Add to Cart</label>
-                            <br>
-                            <p class="hidden" id="cart1">Added to Cart</p>
-                            <br>
+                        <div  class="inner-card">
+                            <p>fixed</p>
+                            <p>second</p>
                         </div>
+                        <div  class="inner-card">
+                            <p>fixed</p>
+                            <p>third</p>
                         </div>
-                        <div id="options2" class="hidden">
-                            <!-- Options for 2 Sets -->
-                        </div>
-                        <div id="options3" class="hidden">
-                            <!-- Options for 3 Sets -->
-                        </div>
-                        <div id="options4" class="hidden">
-                            <!-- Options for 4 Sets -->
+                        <div class="inner-card">
+                            <p>fixed</p>
+                            <p>fourth</p>
                         </div>
                     </div>
+
+                    <div>
+                        <input checked="true" id="first" name="radioGroup" type="radio">
+                        <label for="first">One Time offer</label>
+                    </div>
+                    
+                    <div>
+                        <input id="second" name="radioGroup" type="radio">
+                        <label for="second">Subscribe and Save</label>
+                    </div>
+
+                    
                 </div>
             </div>
-            <!-- ... (Remaining content) ... -->
+            
         </div>
     </div>
 
