@@ -84,8 +84,10 @@
 
 
         <div class="w-full md:w-1/2 p-4 relative">
-            <img id="productImage" src="your-image.jpg" alt="Product Image"
-                class="w-full h-full object-cover">
+            <div class="w-half h-full ">
+                <img id="productImage" src="your-image.jpg" alt="Product Image" class="w-full h-full object-cover">
+            </div>
+            
             <div class="w-full md:w-1/2 p-4 fixed bottom-0 left-0">
                 <div id="imageCarousel" class="flex flex-col justify-center">
                     <div class="mb-2 cursor-pointer" onclick="changeImage(0)">
@@ -192,7 +194,7 @@
     </div>
     </div>
 
-    <script>
+    <script src="script.js">
         function showOptions(option) {
             // Hide all options
             for (let i = 1; i <= 4; i++) {
