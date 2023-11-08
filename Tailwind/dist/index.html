@@ -9,26 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
-    <style>
-        .selected {
-            background-color: green;
-            color: white;
-        }
-
-        @font-face {
-            font-family: 'Cormorant Garamond';
-            src: url('C:\Users\Ashwani\Downloads\Cormorant_Garamond') format('truetype');
-            /* Add additional font formats if necessary */
-        }
-    </style>
 </head>
 
 <body class="font-sans">
-    <div class="flex">
+    <div class="flex flex-col md:flex-row">
         <!-- Left Div with Image Carousel -->
-        <div class="w-1/2 p-4 relative">
-            <img id="productImage" src="your-image.jpg" alt="Product Image" class="w-full h-full object-cover">
-            <div class="w-1/2 p-4 fixed top-0 left-0">
+        <div class="w-full md:w-1/2 p-4 relative">
+            <img id="productImage" src="your-image.jpg" alt="Product Image"
+                class="w-full h-full object-cover">
+            <div class="w-full md:w-1/2 p-4 fixed bottom-0 left-0">
                 <div id="imageCarousel" class="flex flex-col justify-center">
                     <div class="mb-2 cursor-pointer" onclick="changeImage(0)">
                         <div class="w-16 h-16 rounded-full overflow-hidden">
@@ -58,11 +47,12 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Right Div with Product Info and Options -->
-        <div class="w-full md:w-1/2 p-4 md:p-4 font-family: var(--font-heading)">
+        <div class="w-full md:w-1/2 p-4 font-family: var(--font-heading)">
             <div class="mb-6 text-center">
-                <p class="mb-0 mt-3 text-3xl text-green-900 -ml-11 font-Cormorant-Garamond">“Drizzle” & “Sizzle”</p>
+                <p class="mb-0 mt-3 text-3xl text-green-900 -ml-11 font-Cormorant-Garamond">“Drizzle” &
+                    “Sizzle”</p>
                 <p class="text-3xl text-green-900 font-Cormorant-Garamond"><u>Extra Virgin Olive Oil</u></p>
 
                 <div class="flex justify-center my-4">
@@ -78,7 +68,8 @@
                             class="hidden">
                         <div class="flex items-center p-2 border rounded-md hover:bg-green-100 cursor-pointer"
                             id="label1">
-                            <div class="w-4 h-4 border rounded-full border-gray-500 mr-2 bg-green-500 hidden radio-dot"
+                            <div
+                                class="w-4 h-4 border rounded-full border-gray-500 mr-2 bg-green-500 hidden radio-dot"
                                 id="dot1"></div>
                             1 Set +10% Off
                         </div>
@@ -86,9 +77,10 @@
                     <label class="block mb-2 cursor-pointer">
                         <input type="radio" name="quantity" value="2" id="quantity2" onclick="showOptions(2)"
                             class="hidden">
-                        <div class="flex items-center p-2 border rounded-md hover:bg-green-100 cursor-pointer"
+                        <div class="flex items-center p-2 border rounded-md hover-bg-green-100 cursor-pointer"
                             id="label2">
-                            <div class="w-4 h-4 border rounded-full border-gray-500 mr-2 bg-green-500 hidden radio-dot"
+                            <div
+                                class="w-4 h-4 border rounded-full border-gray-500 mr-2 bg-green-500 hidden radio-dot"
                                 id="dot2"></div>
                             2 Sets Free Shipping! +7% Off
                         </div>
@@ -96,9 +88,10 @@
                     <label class="block mb-2 cursor-pointer">
                         <input type="radio" name="quantity" value="3" id="quantity3" onclick="showOptions(3)"
                             class="hidden">
-                        <div class="flex items-center p-2 border rounded-md hover:bg-green-100 cursor-pointer"
+                        <div class="flex items-center p-2 border rounded-md hover-bg-green-100 cursor-pointer"
                             id="label3">
-                            <div class="w-4 h-4 border rounded-full border-gray-500 mr-2 bg-green-500 hidden radio-dot"
+                            <div
+                                class="w-4 h-4 border rounded-full border-gray-500 mr-2 bg-green-500 hidden radio-dot"
                                 id="dot3"></div>
                             3 Sets Free Shipping! +7% Off
                         </div>
@@ -106,9 +99,10 @@
                     <label class="block mb-2 cursor-pointer">
                         <input type="radio" name="quantity" value="4" id="quantity4" onclick="showOptions(4)"
                             class="hidden">
-                        <div class="flex items-center p-2 border rounded-md hover:bg-green-100 cursor-pointer"
+                        <div class="flex items-center p-2 border rounded-md hover-bg-green-100 cursor-pointer"
                             id="label4">
-                            <div class="w-4 h-4 border rounded-full border-gray-500 mr-2 bg-green-500 hidden radio-dot"
+                            <div
+                                class="w-4 h-4 border rounded-full border-gray-500 mr-2 bg-green-500 hidden radio-dot"
                                 id="dot4"></div>
                             4 Sets Free Shipping! +7% Off
                         </div>
@@ -117,13 +111,13 @@
                 <div class="my-2" id="purchaseOptions" style="display: none;">
                     <label class="block mb-2 cursor-pointer">
                         <input type="radio" name="purchaseOption" value="one-time-purchase" class="hidden">
-                        <div class="flex items-center p-2 border rounded-md hover:bg-green-100 cursor-pointer">
+                        <div class="flex items-center p-2 border rounded-md hover-bg-green-100 cursor-pointer">
                             One Time Purchase
                         </div>
                     </label>
                     <label class="block mb-2 cursor-pointer">
                         <input type="radio" name="purchaseOption" value="subscribe-and-save" class="hidden">
-                        <div class="flex items-center p-2 border rounded-md hover:bg-green-100 cursor-pointer">
+                        <div class="flex items-center p-2 border rounded-md hover-bg-green-100 cursor-pointer">
                             Subscribe & Save
                         </div>
                     </label>
@@ -143,49 +137,7 @@
             </div>
         </div>
     </div>
-
-    </body>
-
-    <script src="script.js">
-        let selectedQuantity = 0;
-
-        function showOptions(option) {
-            // Hide all options
-            for (let i = 1; i <= 4; i++) {
-                document.getElementById(`options${i}`).classList.add("hidden");
-                document.getElementById(`label${i}`).classList.remove("selected");
-                document.getElementById(`dot${i}`).classList.add("hidden");
-            }
-
-            // Show options for the selected quantity and highlight the selected radio button
-            document.getElementById(`options${option}`).classList.remove("hidden");
-            document.getElementById(`label${option}`).classList.add("selected");
-            document.getElementById(`dot${option}`).classList.remove("hidden");
-
-            // Update the selected quantity
-            selectedQuantity = option;
-
-            // Show purchase options if the selected quantity is 2
-            if (option === 2) {
-                document.getElementById("purchaseOptions").style.display = "block";
-            } else {
-                document.getElementById("purchaseOptions").style.display = "none";
-            }
-        }
-
-        function addToCart() {
-            // Handle adding to the cart here
-            document.getElementById("addToCart").innerHTML = "Added to Cart";
-        }
-
-        function subscribe() {
-            // Handle subscription here
-            const subscriptionFrequency = document.querySelector('input[name="subscriptionFrequency"]:checked').value;
-            // You can use subscriptionFrequency to determine the selected subscription frequency.
-            document.getElementById("subscribeOptions").innerHTML = `Subscribed to ${subscriptionFrequency}`;
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
