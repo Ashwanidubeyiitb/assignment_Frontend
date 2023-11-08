@@ -12,6 +12,7 @@ const productImage = document.getElementById("productImage");
 function changeImage(index) {
     currentIndex = index;
     productImage.src = imageUrls[index];
+    console.log(productImage.src);
 }
 
 document.getElementById("addToCart").addEventListener("click", function () {
