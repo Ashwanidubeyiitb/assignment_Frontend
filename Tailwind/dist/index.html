@@ -10,6 +10,7 @@
         body {
             background-color: rgb(247, 230, 218);
         }
+
         .outer-card {
             border: 1px solid #000;
             border-radius: 10px;
@@ -17,6 +18,7 @@
             height: 60%;
             width: 75%;
         }
+
         .inner-card {
             border: 1px solid #000;
             padding: 12px;
@@ -24,33 +26,48 @@
             border-radius: 10px;
             width: 23%;
             height: 75px;
-        }.inner-card:hover{
-            background-color: rgb(49, 137, 80) !important;
-            color:white;
+        }
+
+        .active{
+            background-color: green;
+        }
+
+        .active:hover{
+            background-color: green !important;
+        }
+
+        .inner-card:hover {
+            background-color: #f6d7be;
+            color: black;
         }
 
         .selected {
             background-color: green;
             color: white;
         }
+
         .hidden {
             display: none;
         }
+
         .radio-label {
             display: block;
             margin: 5px 0;
         }
+
         .checkbox {
             width: 20px;
             height: 20px;
             background-color: green;
             border-radius: 50%;
         }
+
         .options-flex {
             display: flex;
             border: 1px solid green;
             margin: 8px 0;
         }
+
         .options-flex .inner-card {
             flex: 1;
         }
@@ -59,14 +76,15 @@
 
 <body class="font-sans">
     <div class="flex flex-col md:flex-row">
-        <!-- Left Div with Image Carousel and Numbers -->
+
         <div class="w-full md:w-1/2 p-4 relative">
             <img id="productImage" src="your-image.jpg" alt="Product Image" class="w-full h-auto">
             <div id="carouselDots" class="flex justify-center mt-4 md:hidden"></div>
         </div>
 
-        <!-- Right Div with Product Info and Options -->
-        <div class="w-full md:w-1/2 p-4 md:p-4 font-family: var(--font-heading) flex justify-center items-center flex-col">
+
+        <div
+            class="w-full md:w-1/2 p-4 md:p-4 font-family: var(--font-heading) flex justify-center items-center flex-col">
             <div class="mb-6 text-center">
                 <p class="mb-0 mt-3 text-3xl text-green-900 px-(-11)">“Drizzle” & “Sizzle”</p>
                 <p class="text-3xl text-green-900"><u>Extra Virgin Olive Oil</u></p>
@@ -77,44 +95,64 @@
                     </div>
                     <p class="text-lg text-gray-600 ml-2">881 reviews</p>
                 </div>
-                </div>
-
-                <div class="my-4 outer-card flex flex-col">
-                    <p>Quantity</p>
-                    <div class="flex flex-row justify-between m-4">
-                        <div  class="inner-card">
-                            <p>fixed</p>
-                            <p>first</p>
-                        </div>
-                        <div  class="inner-card">
-                            <p>fixed</p>
-                            <p>second</p>
-                        </div>
-                        <div  class="inner-card">
-                            <p>fixed</p>
-                            <p>third</p>
-                        </div>
-                        <div class="inner-card">
-                            <p>fixed</p>
-                            <p>fourth</p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <input checked="true" id="first" name="radioGroup" type="radio">
-                        <label for="first">One Time offer</label>
-                    </div>
-                    
-                    <div>
-                        <input id="second" name="radioGroup" type="radio">
-                        <label for="second">Subscribe and Save</label>
-                    </div>
-
-                    
-                </div>
             </div>
-            
+
+            <div class="my-4 outer-card flex flex-col">
+                <p>Quantity</p>
+                <div class="flex flex-row justify-between m-4">
+
+
+                    <div onclick="myFunction(this)" class="inner-card active">
+                        <p>fixed</p>
+                        <p id="firstId">first</p>
+                    </div>
+
+
+                    <div onclick="myFunction(this)" class="inner-card">
+                        <p>fixed</p>
+                        <p id="secondId">second</p>
+                    </div>
+
+
+                    <div onclick="myFunction(this)" class="inner-card">
+                        <p>fixed</p>
+                        <p id="thirdId">third</p>
+                    </div>
+
+
+                    <div onclick="myFunction(this)" class="inner-card">
+                        <p>fixed</p>
+                        <p id="fourthId">fourth</p>
+                    </div>
+
+
+                </div>
+
+                <div>
+                    <input checked="true" id="first" name="radioGroup" type="radio">
+                    <label for="first">One Time offer</label>
+                </div>
+
+                <div>
+                    <input id="second" name="radioGroup" type="radio">
+                    <label for="second">Subscribe and Save</label>
+                </div>
+
+                <div id="dropdown" class="hidden">
+                    DropDown
+                </div>
+
+                <button class="w-full rounded-lg bg-green-500 shadow-lg text-white py-2 px-4">
+                    Add to Cart - $16
+                </button>
+
+                <p id="skip" class="text-center hidden">Skip or Cancel Anytime</p>
+                
+
+            </div>
         </div>
+
+    </div>
     </div>
 
     <script>
@@ -127,6 +165,41 @@
             // Show options for the selected quantity
             document.getElementById(`options${option}`).classList.remove("hidden");
         }
+
+        const firstRadio = document.getElementById("first");
+        const secondRadio = document.getElementById("second");
+
+
+
+        function myFunction(e) {
+            var elements = document.getElementsByClassName("inner-card");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].classList.remove("active");
+            }
+            e.classList.add("active");
+        }
+
+        // Add event listener to the radio buttons
+        firstRadio.addEventListener("change", function () {
+            if (firstRadio.checked) {
+                document.getElementById("firstId").innerHTML = "first";
+                document.getElementById("secondId").innerHTML = "second";
+                document.getElementById("dropdown").classList.add("hidden");
+                document.getElementById("skip").classList.add("hidden");
+                console.log("One Time offer is selected");
+            }
+        });
+
+        secondRadio.addEventListener("change", function () {
+            if (secondRadio.checked) {
+                document.getElementById("firstId").innerHTML = "first Updated";
+                document.getElementById("secondId").innerHTML = "second Updated";
+                document.getElementById("skip").classList.remove("hidden");
+                document.getElementById("dropdown").classList.remove("hidden");
+                console.log("Subscribe and Save is selected");
+            }
+        });
     </script>
 </body>
+
 </html>
