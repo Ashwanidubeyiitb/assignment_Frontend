@@ -14,7 +14,7 @@
         body {
             background-color: rgb(247, 230, 218);
         }
-
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=EB+Garamond&display=swap');
         .outer-card {
             border: 1px solid #000;
             border-radius: 10px;
@@ -32,11 +32,11 @@
             height: 75px;
         }
 
-        .active{
+        .active {
             background-color: green;
         }
 
-        .active:hover{
+        .active:hover {
             background-color: green !important;
         }
 
@@ -72,6 +72,10 @@
             margin: 8px 0;
         }
 
+        .custom-font{
+            font-family: 'Cormorant Garamond' !important;
+        }
+
         .options-flex .inner-card {
             flex: 1;
         }
@@ -87,7 +91,7 @@
             <div class="w-half h-full ">
                 <img id="productImage" src="your-image.jpg" alt="Product Image" class="w-full h-full object-cover">
             </div>
-            
+
             <div class="w-full md:w-1/2 p-4 fixed bottom-0 left-0">
                 <div id="imageCarousel" class="flex flex-col justify-center">
                     <div class="mb-2 cursor-pointer" onclick="changeImage(0)">
@@ -120,15 +124,12 @@
         </div>
 
 
-
-
-
         <div
             class="w-full md:w-1/2 p-4 md:p-4 font-family: var(--font-heading) flex justify-center items-center flex-col">
             <div class="mb-6 text-center">
-                <p class="mb-0 mt-3 text-3xl text-green-900 -ml-11 font-Cormorant-Garamond">“Drizzle” &
+                <p class="mb-0 mt-3 text-3xl text-green-900 -ml-11 custom-font">“Drizzle” &
                     “Sizzle”</p>
-                <p class="text-3xl text-green-900 font-Cormorant-Garamond"><u>Extra Virgin Olive Oil</u></p>
+                <p class="text-3xl text-green-900 custom-font"><u class="custom-font">Extra Virgin Olive Oil</u></p>
 
                 <div class="flex justify-center my-4">
                     <div class="text-2xl">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -142,26 +143,32 @@
 
 
                     <div id="firstBox" onclick="myFunction(this)" class="inner-card active">
-                        <p>fixed</p>
-                        <p id="firstId">first</p>
+                        <p>1</p>
+                        <p id="firstId">Set</p>
                     </div>
 
 
                     <div id="secondBox" onclick="myFunction(this)" class="inner-card">
-                        <p>fixed</p>
-                        <p id="secondId">second</p>
+                        <p>2</p>
+                        <p id="secondId">Sets</p>
+                        <p>Free Shipping!</p>
+                        <p>+7% off</p>
                     </div>
 
 
                     <div id="thirdBox" onclick="myFunction(this)" class="inner-card">
-                        <p>fixed</p>
-                        <p id="thirdId">third</p>
+                        <p>3</p>
+                        <p id="thirdId">Sets</p>
+                        <p>Free Shipping!</p>
+                        <p>+9% off</p>
                     </div>
 
 
                     <div id="fourthBox" onclick="myFunction(this)" class="inner-card">
-                        <p>fixed</p>
-                        <p id="fourthId">fourth</p>
+                        <p>6</p>
+                        <p id="fourthId">Sets</p>
+                        <p>Free Shipping!</p>
+                        <p>+11% off</p>
                     </div>
 
 
@@ -169,16 +176,23 @@
 
                 <div>
                     <input checked="true" id="first" name="radioGroup" type="radio">
-                    <label id="firstLabel" for="first">One Time offer, Price 1</label>
+                    <label id="firstLabel" for="first">One Time Purchase       $37</label>
                 </div>
 
                 <div>
                     <input id="second" name="radioGroup" type="radio">
-                    <label id="secondLabel" for="second">Subscribe and Save, Price 11</label>
+                    <label id="secondLabel" for="second">Subscribe & Save       $33.30</label>
                 </div>
 
                 <div id="dropdown" class="hidden">
-                    DropDown
+                    <form>
+                        <label for="frequency">Frequency:</label>
+                        <select name="frequency" id="frequency">
+                            <option value="1">Every 1 Month</option>
+                            <option value="2">Every 2 Months</option>
+                            <option value="3">Every 3 Months</option>
+                        </select>
+                    </form>
                 </div>
 
                 <button id="mainButton" class="w-full rounded-lg bg-green-500 shadow-lg text-white py-2 px-4">
@@ -186,15 +200,16 @@
                 </button>
 
                 <p id="skip" class="text-center hidden">Skip or Cancel Anytime</p>
-                
+
 
             </div>
         </div>
+<!-- jjjjj -->
 
     </div>
     </div>
 
-    <script src="script.js">
+    <script>
         function showOptions(option) {
             // Hide all options
             for (let i = 1; i <= 4; i++) {
@@ -216,36 +231,36 @@
                 elements[i].classList.remove("active");
             }
             e.classList.add("active");
-            if(e.id === "firstBox"){
+            if (e.id === "firstBox") {
                 document.getElementById("firstLabel").innerHTML = "One Time offer, Price 1";
                 document.getElementById("secondLabel").innerHTML = "Subscribe and Save, Price 11";
-                if(secondRadio.checked){
+                if (secondRadio.checked) {
                     document.getElementById("mainButton").innerHTML = "Subscribe - Total Price 11";
-                }else{
+                } else {
                     document.getElementById("mainButton").innerHTML = "Add to Cart - Total Price 1";
                 }
-            }else if(e.id === "secondBox"){
+            } else if (e.id === "secondBox") {
                 document.getElementById("firstLabel").innerHTML = "One Time offer, Price 2";
                 document.getElementById("secondLabel").innerHTML = "Subscribe and Save, Price 22";
-                if(secondRadio.checked){
+                if (secondRadio.checked) {
                     document.getElementById("mainButton").innerHTML = "Subscribe - Total Price 22";
-                }else{
+                } else {
                     document.getElementById("mainButton").innerHTML = "Add to Cart - Total Price 2";
                 }
-            }else if(e.id === "thirdBox"){
+            } else if (e.id === "thirdBox") {
                 document.getElementById("firstLabel").innerHTML = "One Time offer, Price 3";
                 document.getElementById("secondLabel").innerHTML = "Subscribe and Save, Price 33";
-                if(secondRadio.checked){
+                if (secondRadio.checked) {
                     document.getElementById("mainButton").innerHTML = "Subscribe - Total Price 33";
-                }else{
+                } else {
                     document.getElementById("mainButton").innerHTML = "Add to Cart - Total Price 3";
                 }
-            }else if(e.id === "fourthBox"){
+            } else if (e.id === "fourthBox") {
                 document.getElementById("firstLabel").innerHTML = "One Time offer, Price 4";
                 document.getElementById("secondLabel").innerHTML = "Subscribe and Save, Price 44";
-                if(secondRadio.checked){
+                if (secondRadio.checked) {
                     document.getElementById("mainButton").innerHTML = "Subscribe - Total Price 44";
-                }else{
+                } else {
                     document.getElementById("mainButton").innerHTML = "Add to Cart - Total Price 4";
                 }
             }
@@ -259,13 +274,13 @@
                 document.getElementById("dropdown").classList.add("hidden");
                 document.getElementById("skip").classList.add("hidden");
                 console.log("One Time offer is selected");
-                if(firstBox.classList.contains("active")){
+                if (firstBox.classList.contains("active")) {
                     document.getElementById("mainButton").innerHTML = "Add to Cart - Total Price 1";
-                }else if(secondBox.classList.contains("active")){
+                } else if (secondBox.classList.contains("active")) {
                     document.getElementById("mainButton").innerHTML = "Add to Cart - Total Price 2";
-                }else if(thirdBox.classList.contains("active")){
+                } else if (thirdBox.classList.contains("active")) {
                     document.getElementById("mainButton").innerHTML = "Add to Cart - Total Price 3";
-                }else if(fourthBox.classList.contains("active")){
+                } else if (fourthBox.classList.contains("active")) {
                     document.getElementById("mainButton").innerHTML = "Add to Cart - Total Price 4";
                 }
             }
@@ -278,13 +293,13 @@
                 document.getElementById("skip").classList.remove("hidden");
                 document.getElementById("dropdown").classList.remove("hidden");
                 console.log("Subscribe and Save is selected");
-                if(firstBox.classList.contains("active")){
+                if (firstBox.classList.contains("active")) {
                     document.getElementById("mainButton").innerHTML = "Subscribe - Total Price 11";
-                }else if(secondBox.classList.contains("active")){
+                } else if (secondBox.classList.contains("active")) {
                     document.getElementById("mainButton").innerHTML = "Subscribe - Total Price 22";
-                }else if(thirdBox.classList.contains("active")){
+                } else if (thirdBox.classList.contains("active")) {
                     document.getElementById("mainButton").innerHTML = "Subscribe - Total Price 33";
-                }else if(fourthBox.classList.contains("active")){
+                } else if (fourthBox.classList.contains("active")) {
                     document.getElementById("mainButton").innerHTML = "Subscribe - Total Price 44";
                 }
             }
