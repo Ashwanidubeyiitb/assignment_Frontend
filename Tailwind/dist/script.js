@@ -53,17 +53,17 @@ window.addEventListener("resize", () => {
     
 });
 
-function showDetails(section) {
-    const sections = ["description", "harvest", "users"];
-    for (const sec of sections) {
-        const element = document.getElementById(sec);
-        if (section === sec) {
-            element.style.display = "block";
-        } else {
-            element.style.display = "none";
-        }
-    }
-}
+// function showDetails(section) {
+//     const sections = ["description", "harvest", "users"];
+//     for (const sec of sections) {
+//         const element = document.getElementById(sec);
+//         if (section === sec) {
+//             element.style.display = "block";
+//         } else {
+//             element.style.display = "none";
+//         }
+//     }
+// }
 // Automatic image carousel
 
 
