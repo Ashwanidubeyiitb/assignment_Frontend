@@ -50,6 +50,7 @@ window.addEventListener("resize", () => {
         imageCarousel.style.display = "none"; // Hide the dot navigation
         document.getElementById("circularImages").style.display = "block"; // Show circular div
     }
+    
 });
 
 function showDetails(section) {
