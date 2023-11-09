@@ -58,6 +58,9 @@
             display: block;
             margin: 5px 0;
         }
+        .radii{
+            border-radius: 20%;
+        }
 
         .checkbox {
             width: 20px;
@@ -142,7 +145,7 @@
                 <div id="boxContainer" class="flex flex-row justify-between m-4">
 
 
-                    <div id="firstBox" onclick="myFunction(this)" class="inner-card active">
+                    <div id="firstBox" onclick="myFunction(this)" class="inner-card active ">
                         <p>1</p>
                         <p>Bottle</p>
                         <p style="font-size:xx-small;" id="firstId"></p>
@@ -186,12 +189,14 @@
 
                 <div id="dropdown" class="hidden">
                     <form>
+                        
                         <label for="frequency">Frequency:</label>
                         <select name="frequency" id="frequency">
                             <option value="1">Every 1 Month</option>
                             <option value="2">Every 2 Months</option>
                             <option value="3">Every 3 Months</option>
                         </select>
+                    
                     </form>
                 </div>
 
@@ -204,7 +209,7 @@
 
             </div>
         </div>
-
+        
     </div>
     </div>
 
