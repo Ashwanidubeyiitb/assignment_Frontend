@@ -14,7 +14,9 @@
         body {
             background-color: rgb(247, 230, 218);
         }
+
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=EB+Garamond&display=swap');
+
         .outer-card {
             border: 1px solid #000;
             border-radius: 10px;
@@ -65,7 +67,8 @@
             display: block;
             margin: 5px 0;
         }
-        .radii{
+
+        .radii {
             border-radius: 20%;
         }
 
@@ -82,12 +85,48 @@
             margin: 8px 0;
         }
 
-        .custom-font{
+        .custom-font {
             font-family: 'Cormorant Garamond' !important;
         }
 
         .options-flex .inner-card {
             flex: 1;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
         }
 
 
@@ -190,14 +229,14 @@
 
                     <div id="secondBox" onclick="myFunction(this)" class="inner-card">
                         <p>2</p>
-                        <p >Bottles</p>
+                        <p>Bottles</p>
                         <p style="font-size:xx-small;" id="secondId"></p>
                     </div>
 
 
                     <div id="thirdBox" onclick="myFunction(this)" class="inner-card">
                         <p>3</p>
-                        <p >Bottles</p>
+                        <p>Bottles</p>
                         <p style="font-size:xx-small;">Free Shipping!</p>
                         <p id="thirdId" style="font-size:xx-small;">+9% off</p>
                     </div>
@@ -205,7 +244,7 @@
 
                     <div id="fourthBox" onclick="myFunction(this)" class="inner-card">
                         <p>6</p>
-                        <p >Bottles</p>
+                        <p>Bottles</p>
                         <p style="font-size:xx-small;">Free Shipping!</p>
                         <p id="fourthId" style="font-size:xx-small;">+11% off</p>
                     </div>
@@ -231,7 +270,7 @@
                             <option style="text-align: center;"  value="2">Frequency: Every 2 Months</option>
                             <option style="text-align: center;"  value="3">Frequency: Every 3 Months</option>
                         </select>
-                    
+
                     </form>
                 </div>
 
@@ -245,8 +284,39 @@
 
 
             </div>
+            <!-- Tab links -->
+            <div class="tab">
+                <button class="tablinks" onclick="openCity(event, 'London')"><strong>DESCRIPTION</strong></button>
+                <button class="tablinks" onclick="openCity(event, 'Paris')"><strong>HARVEST</strong></button>
+                <button class="tablinks" onclick="openCity(event, 'Tokyo')"><strong>USE CASES</strong></button>
+            </div>
+
+            <div id="London" class="tabcontent">
+               
+                <H4><strong>DRIZZLE: 500ML</strong></H4>
+                <p>Extra Virgin finishing oil made from olives that are picked early, when flavor is bold and antioxidants are highest. Made for eating, never heating.</p>
+                <h4><strong>SIZZLE: 750ML</strong></h4>
+                <p>Extra Virgin cooking oil made from mature, mid-season olives that yield a more mellow flavor. Use it every day, in every way.</p>
+                <p><strong>*HEADS UP! MULTIPLE SETS OF DRIZZLE & SIZZLE SHIP IN THE SAME BOX! TO ORDER INDIVIDUALLY PACKAGED GIFT SETS, CLICK HERE! 🎁</strong></p>
+            </div>
+
+            <div id="Paris" class="tabcontent">
+                <H4><strong>DRIZZLEL:</strong></H4>
+                <p>Harvested in October, before the olives have ripened fully. Picked by hand because young olives need a firm yank to loosen up.
+                </p>
+                <h4><strong>SIZZLE: </strong></h4>
+                <p>Harvested in November and December, when the olives are more mature. They’re pretty laid back by this point, so it only takes a few shakes to get them off the branch.</p>
+            </div>
+
+            <div id="Tokyo" class="tabcontent">
+                <H4><strong>DRIZZLEL:</strong></H4>
+                <p>A little Drizzle goes a long way! Use it on and around things like ice cream, pesto, popcorn, salads, sandwiches or even directly on your tongue (we won’t tell). </p>
+                <h4><strong>SIZZLE: </strong></h4>
+                <p>If you would put it in or on top of an oven, use sizzle. Chicken Cutlets, Sheet Pan Veggies, Fried Rice, or even Chocolate Chip Cookies! You name it, Sizzle sizzles it.</p>
+            </div>
+
         </div>
-        
+
     </div>
     </div>
 
@@ -267,14 +337,14 @@
         const boxes = document.getElementsByClassName("inner-card");
 
 
-        if(window.innerWidth<500){
+        if (window.innerWidth < 500) {
             document.getElementById("boxContainer").style.flexDirection = "column";
             document.getElementById("boxContainer").style.alignItems = "center";
             for (let i = 0; i < boxes.length; i++) {
                 boxes[i].style.width = "80%";
                 boxes[i].style.margin = "10px";
             }
-        }else{
+        } else {
             document.getElementById("boxContainer").style.flexDirection = "row";
             for (let i = 0; i < boxes.length; i++) {
                 boxes[i].style.width = "23%";
@@ -367,6 +437,19 @@
                 }
             }
         });
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
     </script>
     <script src="script.js"></script>
 </body>
